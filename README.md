@@ -4,14 +4,29 @@ This is a build script to setup a base development structure for my golang
 projects. It comes with some default libraries downloaded and a base project
 dir.
 
+<br/>
 
-Requirements:
+### Requirements
+
 - you should have done a `go mod init $awesome_module_name`
 - protoc [optional]
 - curl
 
 
-Structure:
+**Usage**:
+
+[download the files](https://github.com/ikouchiha47/kickstart-go-proj/archive/refs/heads/main.zip). Only the `kickstart-go-proj.sh`, is
+required. Unless you want to generate the protos, and see the docs, then
+download rest of it.
+
+```shell
+curl -LJO https://github.com/ikouchiha47/kickstart-go-proj/archive/refs/heads/main.zip
+```
+
+<br/>
+
+### Structure
+
 - `cmd/` this contains the `main.go`/entrypoint for each type of standalone
   binaries. `cmd/server/main.go`, `cmd/worker/main.go`
 - `app/` this directory has most of your application code.
@@ -31,7 +46,10 @@ Optionally:
 - `openapiv2/` will have the generated json.
 
 
-Preinstall packages:
+<br/>
+
+### Preinstalled packages
+
 - `github.com/go-batteries/diaper`, a wrapper over viper, which allows to use
   different sources for value. Like `env://` for ENV, `ssm://` for SSM. Its
   configurable
@@ -46,4 +64,5 @@ On choosing to use `proto`, it will download:
 
 In addition it also downloads the required `proto` defintion from `googleapis`
 and `grpc-gateway`. The basic ones to support a decent list of annotations.
+
 
